@@ -700,7 +700,7 @@ def main():
     if hasattr(sys, "setdefaultencoding"):
         del sys.setdefaultencoding
 
-main()
+# main()
 
 def _script():
     help = """\

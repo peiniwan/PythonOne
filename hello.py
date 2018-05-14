@@ -17,7 +17,8 @@ if a >= 0:  # 注意冒号
     print a
 else:
     print -a
-
+# int转成string，函数int(string)
+# string转成int，函数str(number)
 print len(u'ABC')
 print 'Hi, %s, you have $%d.' % ('Michael', 1000000)
 print 'Age: %s. Gender: %s' % (25, True)

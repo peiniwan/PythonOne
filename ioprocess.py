@@ -26,6 +26,13 @@ finally:
 with open('D:\heihei.txt', 'r') as f:
     print f.read()
 
+# 判断文件是否存在
+if os.path.isdir(f):
+    pass
+else:
+    os.makedirs(f)
+
+
 # 直接读出unicode
 # with codecs.open('D:/gbk.txt', 'r', 'gbk') as f:
 #     f.read() # u'\u6d4b\u8bd5'
