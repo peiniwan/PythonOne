@@ -31,6 +31,9 @@ import re
 # findall：在string中查找所有 匹配成功的组, 即用括号括起来的部分。返回list对象，每个list item是由每个匹配的所有组组成的list。
 # finditer：在string中查找所有 匹配成功的字符串, 返回iterator，每个item是一个Match object。
 
+# 将正则表达式编译成 Pattern 对象，注意 hello 前面的 r 的意思是 “原生字符串”
+
+
 content = '333STR1666STR299'
 regex = r'([A-Z]+(\d))'
 # 最外边的括号去掉，即regex = r'[A-Z]+(\d)'，组的个数就会减少一个
