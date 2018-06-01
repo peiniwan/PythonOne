@@ -1,5 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import socket
+
+# 客户端
+s = net.socket(socket.AF_INET, socket.SOCK_STREAM)
+# 建立连接:
+s.connect(('192.168.202.2', 9999))
+# 接收欢迎消息:
+print s.recv(1024)
+for data in ['Michael', 'Tracy', 'Sarah']:
+    # 发送数据:
+    s.send(data)
+    print s.recv(1024)
+s.send('exit')
+s.close()
+
 
 # tcp
 # 服务器要能够区分一个Socket连接是和哪个客户端绑定的。
@@ -7,7 +22,7 @@
 # 创建一个socket:
 import socket
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = net.socket(socket.AF_INET, socket.SOCK_STREAM)
 # 建立连接:
 s.connect(('www.sina.com.cn', 80))
 # 发送数据:

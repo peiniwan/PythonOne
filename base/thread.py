@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Python解释器由于设计时有GIL全局锁，导致了多线程无法利用多核。多线程的并发在Python中就是一个美丽的梦。
 # 新线程执行的代码:
 # 主线程实例的名字叫MainThread，子线程的名字在创建时指定，我们用LoopThread命名子线程
 import threading
@@ -20,6 +21,7 @@ def loop():
 print 'thread %s is running...' % threading.current_thread().name
 t = threading.Thread(target=loop, name='LoopThread')
 t.start()
+# join的原理就是依次检验线程池中的线程是否结束，没有结束就阻塞直到线程结束，如果结束则跳转执行下一个线程的join函数。
 t.join()
 print 'thread %s ended.' % threading.current_thread().name
 
